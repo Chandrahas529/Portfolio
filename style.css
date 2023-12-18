@@ -509,7 +509,7 @@ nav{
 .grey-bg{
     height: 100%;
     width: 100%;
-/*     background:#ffffff; */
+     background:#ffffff;
     color: black;
     display: flex;
     align-items: center;
@@ -541,7 +541,7 @@ nav{
     transform-origin: center;
 }
 .card:hover .img-bg{
-    transform: scale(1.2) rotateY(359deg);
+    transform: scale(1.1);
     transition-duration: 1s;
 }
 .anima{
