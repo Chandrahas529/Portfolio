@@ -17,19 +17,6 @@ body{
     font-family: 'Lato', sans-serif;
     font-family: 'Roboto', sans-serif;
 }
-.preloader{
-    height: -webkit-fill-available;
-    height: -moz-available;
-    display: flex;
-    position: fixed;
-    background: white;
-    width: -webkit-fill-available;
-    width: -moz-available;
-    align-items: center;
-    justify-content: center;
-    z-index: 1;
-    overflow: hidden;
-}
 .nav{
     background: black;
     margin: 10px 10px;
