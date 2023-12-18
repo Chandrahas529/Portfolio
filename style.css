@@ -509,7 +509,7 @@ nav{
 .grey-bg{
     height: 100%;
     width: 100%;
-    background:#ffffff;
+/*     background:#ffffff; */
     color: black;
     display: flex;
     align-items: center;
@@ -518,7 +518,7 @@ nav{
     transform: rotateY(180deg);
     backface-visibility: hidden;
     font-size: x-large;
-    text-shadow: -62px -55px 1px rgb(238, 255, 9), 49px -34px 2px green, -33px 30px 2px red, 26px 61px 2px blue;
+/*     text-shadow: -62px -55px 1px rgb(238, 255, 9), 49px -34px 2px green, -33px 30px 2px red, 26px 61px 2px blue; */
     overflow: hidden;
 }
 .front-bg{
@@ -527,11 +527,12 @@ nav{
     height: 100%;
 }
 .list-img{
-    height: 100%;
-    width: 100%;
+    height: calc(100% - 20px);
+    width: calc(100% - 20px);
     box-shadow: 0px 6px 7px 1px black;
     position: relative;
     image-rendering: pixelated;
+    border: 20px solid #1a1919;
 }
 .card{
     height: 150px;
