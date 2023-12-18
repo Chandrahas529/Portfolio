@@ -1,10 +1,3 @@
-function preloader () {
-    setTimeout(loader,3000)
-    function loader(){
-        document.getElementById("preloader").style.display = "none";
-    }
-}
-
 function openMenu(){
     document.getElementById('navbar').classList.add('active-nav');
     document.getElementById("menu-btn").style.display = "none";
