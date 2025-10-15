@@ -1,0 +1,178 @@
+.hero {
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    min-height: 100vh;
+    flex-direction: row;
+    font-family: "Montserrat", serif;
+    font-weight: 500;
+    font-style: normal;
+    overflow: hidden; /* Prevents any unwanted scrolling issues during animation */
+}
+
+.hero-left {
+    font-size: 39px;
+}
+
+.name {
+    color: #16b3dc;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    display: inline-flex;
+    height: calc(1em + 6px);
+}
+
+.animate-name {
+    color: #faebd7;
+    text-shadow: 0 0 0 #faebd7;
+    display: inline-block;
+    transform: translateY(200px);
+    opacity: 0;
+    animation: name 1s ease-in-out infinite alternate;
+    animation-delay: calc(var(--i) * 0.15s);
+}
+
+@keyframes name {
+    100% {
+        text-shadow: 20px 0 70px #ff0266;
+        color: #ff0266;
+    }
+}
+
+.hero-img {
+    height: 350px;
+    transition: transform 1s ease-out;
+}
+
+.social-links {
+    margin-top: 15px;
+    display: flex;
+    gap: 20px;
+    color: #ff0266;
+}
+
+.social {
+    cursor: pointer;
+    opacity: 0;
+    transform: scale(0);
+    transition: transform 0.3s ease, opacity 0.5s ease;
+}
+
+.social-link {
+    position: relative;
+    color: #ff0266;
+}
+
+.social-link:hover {
+    transform: translateY(-15px);
+    transition: .2s linear;
+}
+
+.social-link:nth-child(1)::before {
+    content: "Linkedin";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    font-size: 14px;
+    transition: .2s linear;
+}
+
+.social-link:nth-child(1):hover::before {
+    transform: translate(-50%, 100%);
+}
+
+.social-link:nth-child(2)::before {
+    content: "Github";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    font-size: 14px;
+    transition: .2s linear;
+}
+
+.social-link:nth-child(2):hover::before {
+    transform: translate(-50%, 100%);
+}
+
+.social-link:nth-child(3)::before {
+    content: "Email";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    font-size: 14px;
+    transition: .2s linear;
+}
+
+.social-link:nth-child(3):hover::before {
+    transform: translate(-50%, 100%);
+}
+
+@media (max-width:1000px) {
+    .hero-left {
+        font-size: 35px;
+    }
+}
+
+@media (max-width:920px) {
+    .hero-left {
+        font-size: 32px;
+    }
+
+    .hero-img {
+        height: 300px;
+    }
+}
+
+@media (max-width:750px) {
+    .hero {
+        flex-direction: column;
+        padding-top: 8em;
+    }
+}
+
+@media (max-width:550px) {
+    .hero-left {
+        font-size: 28px;
+    }
+
+    .hero {
+        padding: 7em 1em 0em;
+    }
+
+    .social-link:nth-child(1)::before {
+        font-size: 11px;
+    }
+
+    .social-link:nth-child(2)::before {
+        font-size: 11px;
+    }
+
+    .social-link:nth-child(3)::before {
+        font-size: 11px;
+    }
+}
+
+@media (max-width:500px) {
+    .hero {
+        padding: 10px;
+    }
+}
+
+@media (max-width:400px) {
+    .hero-left {
+        font-size: 24px;
+    }
+
+    .hero {
+        padding-top: 5em;
+    }
+
+    .hero-img {
+        height: 270px;
+    }
+}
