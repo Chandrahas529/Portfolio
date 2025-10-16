@@ -7,19 +7,19 @@ import { useEffect, useRef } from "react";
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 const VAarta = [
-  "/Projects/Vaarta-1.png",
-  "/Projects/Vaarta-2.png",
-  "/Projects/Vaarta-3.png",
-  "/Projects/Vaarta-4.png",
-  "/Projects/Vaarta-5.png"
+  "/Projects_images/Vaarta-1.png",
+  "/Projects_images/Vaarta-2.png",
+  "/Projects_images/Vaarta-3.png",
+  "/Projects_images/Vaarta-4.png",
+  "/Projects_images/Vaarta-5.png"
 ];
 const Homeverse = [
-  "/Projects/Homeverse-1.png",
-  "/Projects/Homeverse-2.png",
-  "/Projects/Homeverse-3.png",
-  "/Projects/Homeverse-4.png",
-  "/Projects/Homeverse-5.png",
-  "/Projects/Homeverse-6.png"
+  "/Projects_images/Homeverse-1.png",
+  "/Projects_images/Homeverse-2.png",
+  "/Projects_images/Homeverse-3.png",
+  "/Projects_images/Homeverse-4.png",
+  "/Projects_images/Homeverse-5.png",
+  "/Projects_images/Homeverse-6.png"
 ];
 const Timelessgem = [
   "/Projects_images/timelessgem-1.png",
@@ -89,6 +89,12 @@ function Projects() {
 
       project.addEventListener("mouseenter", () => {
         // Start interval only if it hasn't started for this project
+        if (!intervalIds.current[className]) {
+          intervalIds.current[className] = setInterval(transitionFn, 1000);
+        }
+      });
+      project.addEventListener("touchstart", (e) => {
+        e.preventDefault(); // Prevent default touch behavior
         if (!intervalIds.current[className]) {
           intervalIds.current[className] = setInterval(transitionFn, 1000);
         }
