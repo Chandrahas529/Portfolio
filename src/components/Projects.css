@@ -82,12 +82,13 @@ iframe{
     gap: 30px;
     padding: 11px 0 0 0;
 }
-.project-links a{
+.project-links a,.project-links button{
     text-decoration: none;
     color: black;
     padding: 3px 7px;
     background: white;
     border-radius: 20px;
+    border: none;
 }
 .project-desc{
     color: #ffffffba;

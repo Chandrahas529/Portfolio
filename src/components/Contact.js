@@ -58,7 +58,7 @@ function Contact() {
     return <div className="contact">
         <h2>Contact me</h2>
         <div className="form-ctn">
-            <img className="contact-me" src={contact_me} />
+            <img className="contact-me" alt="Contact png" src={contact_me} />
             <form ref={form} onSubmit={sendEmail} className="form">
                 <div className="labels"><label>Name </label></div>
                 <input type="text" name="user_name" placeholder="John Doe" />

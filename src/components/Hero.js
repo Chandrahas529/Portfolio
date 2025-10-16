@@ -1,6 +1,6 @@
 import "./Hero.css";
 import image_hero from "../images/rb_693.png";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import { useGSAP } from '@gsap/react';
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -66,7 +66,7 @@ function Hero() {
                 </div>
             </div>
             <div className="hero-right">
-                <img className="hero-img" src={image_hero} alt="laptop image" />
+                <img className="hero-img" src={image_hero} alt="laptop png" />
             </div>
         </div>
     );

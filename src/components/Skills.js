@@ -23,7 +23,7 @@ const skills = [
 gsap.registerPlugin(useGSAP,ScrollTrigger);
 function Skill({ src, name }) {
     return <div className="skill">
-        <img src={require(`../images/${src}.png`)} className="lang-logo" />
+        <img src={require(`../images/${src}.png`)} alt={name} className="lang-logo" />
         <label className="language">{name}</label>
     </div>;
 }

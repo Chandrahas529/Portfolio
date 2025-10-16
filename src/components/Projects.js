@@ -199,8 +199,8 @@ function Projects() {
               <li>Css</li>
             </ul>
             <div className="project-links">
-              <a style={{ cursor: "not-allowed" }}><i className="fa-solid fa-circle" style={{ color: "#ff0000" }}></i> Live</a>
-              <a style={{ cursor: "not-allowed" }}><i className="fa-solid fa-code" style={{ color: "#1e00ff" }}></i> Code</a>
+              <button style={{ cursor: "not-allowed" }}><i className="fa-solid fa-circle" style={{ color: "#ff0000" }}></i> Live</button>
+              <button style={{ cursor: "not-allowed" }}><i className="fa-solid fa-code" style={{ color: "#1e00ff" }}></i> Code</button>
             </div>
           </div>
           <img className="project-img vaarta" alt="VAarta" src={VAarta[0]} />
