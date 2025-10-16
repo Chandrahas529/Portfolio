@@ -1,5 +1,5 @@
 import "./Projects.css";
-import { useGSAP } from '@gsap/react';
+import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect, useRef } from "react";
@@ -11,7 +11,7 @@ const VAarta = [
   "/Projects_images/Vaarta-2.png",
   "/Projects_images/Vaarta-3.png",
   "/Projects_images/Vaarta-4.png",
-  "/Projects_images/Vaarta-5.png"
+  "/Projects_images/Vaarta-5.png",
 ];
 const Homeverse = [
   "/Projects_images/Homeverse-1.png",
@@ -19,7 +19,7 @@ const Homeverse = [
   "/Projects_images/Homeverse-3.png",
   "/Projects_images/Homeverse-4.png",
   "/Projects_images/Homeverse-5.png",
-  "/Projects_images/Homeverse-6.png"
+  "/Projects_images/Homeverse-6.png",
 ];
 const Timelessgem = [
   "/Projects_images/timelessgem-1.png",
@@ -30,7 +30,7 @@ const Timelessgem = [
   "/Projects_images/timelessgem-6.png",
   "/Projects_images/timelessgem-7.png",
   "/Projects_images/timelessgem-8.png",
-  "/Projects_images/timelessgem-9.png"
+  "/Projects_images/timelessgem-9.png",
 ];
 const CSHospital = [
   "/Projects_images/CS_hospital-1.png",
@@ -42,20 +42,18 @@ const CSHospital = [
   "/Projects_images/CS_hospital-7.png",
   "/Projects_images/CS_hospital-8.png",
   "/Projects_images/CS_hospital-9.png",
-  "/Projects_images/CS_hospital-10.png"
+  "/Projects_images/CS_hospital-10.png",
 ];
 
 function Projects() {
-  // Store interval IDs and indices for each project
   const intervalIds = useRef({});
   const indices = useRef({
     timelessgem: 0,
     cshospital: 0,
     homeverse: 0,
-    vaarta: 0
+    vaarta: 0,
   });
 
-  // Your original transition functions
   function transitionA() {
     const image = document.querySelector(".timelessgem");
     image.src = Timelessgem[indices.current.timelessgem];
@@ -84,24 +82,23 @@ function Projects() {
     const projects = document.querySelectorAll(".project");
 
     projects.forEach((project, index) => {
-      const className = project.querySelector("img").classList[1]; // Get specific class (timelessgem, cshospital, etc.)
+      const className = project.querySelector("img").classList[1];
       const transitionFn = [transitionA, transitionB, transitionC, transitionD][index];
 
       project.addEventListener("mouseenter", () => {
-        // Start interval only if it hasn't started for this project
         if (!intervalIds.current[className]) {
           intervalIds.current[className] = setInterval(transitionFn, 1000);
         }
       });
+
       project.addEventListener("touchstart", (e) => {
-        e.preventDefault(); // Prevent default touch behavior
+        // Removed e.preventDefault() to allow scrolling
         if (!intervalIds.current[className]) {
           intervalIds.current[className] = setInterval(transitionFn, 1000);
         }
       });
     });
 
-    // Optional cleanup: Remove if you want intervals to persist after unmount
     return () => {
       Object.values(intervalIds.current).forEach(clearInterval);
       intervalIds.current = {};
@@ -119,8 +116,8 @@ function Projects() {
         scrollTrigger: {
           trigger: project,
           start: "top 90%",
-          toggleActions: "play none none none"
-        }
+          toggleActions: "play none none none",
+        },
       });
     });
   }, []);
@@ -130,7 +127,7 @@ function Projects() {
       <h2>Some Projects</h2>
       <div className="project-ctn">
         <div className="project">
-          <img className="project-img timelessgem" alt="timelessgem" src={Timelessgem[0]} />
+          <img className="project-img timelessgem" alt="Timelessgem" src={Timelessgem[0]} />
           <div>
             <h3 className="project-name">Timelessgem</h3>
             <div className="project-desc">
@@ -145,8 +142,12 @@ function Projects() {
               <li>Css</li>
             </ul>
             <div className="project-links">
-              <a href="https://timelessgem.netlify.app/"><i className="fa-solid fa-circle" style={{ color: "#ff0000" }}></i> Live</a>
-              <a href="https://github.com/Chandrahas529/TimelessGem_frontend"><i className="fa-solid fa-code" style={{ color: "#1e00ff" }}></i> Code</a>
+              <a href="https://timelessgem.netlify.app/">
+                <i className="fa-solid fa-circle" style={{ color: "#ff0000" }}></i> Live
+              </a>
+              <a href="https://github.com/Chandrahas529/Timelessgem_frontend">
+                <i className="fa-solid fa-code" style={{ color: "#1e00ff" }}></i> Code
+              </a>
             </div>
           </div>
         </div>
@@ -165,11 +166,15 @@ function Projects() {
               <li>Css</li>
             </ul>
             <div className="project-links">
-              <a href="https://timelessgem.netlify.app/"><i className="fa-solid fa-circle" style={{ color: "#ff0000" }}></i> Live</a>
-              <a href="https://github.com/Chandrahas529/Doctor_appointment_frontend"><i className="fa-solid fa-code" style={{ color: "#1e00ff" }}></i> Code</a>
+              <a href="https://cshospital.netlify.app/">
+                <i className="fa-solid fa-circle" style={{ color: "#ff0000" }}></i> Live
+              </a>
+              <a href="https://github.com/Chandrahas529/Doctor_appointment_frontend">
+                <i className="fa-solid fa-code" style={{ color: "#1e00ff" }}></i> Code
+              </a>
             </div>
           </div>
-          <img className="project-img cshospital" alt="CS_Hospital" src={CSHospital[0]} />
+          <img className="project-img cshospital" alt="CS Hospital" src={CSHospital[0]} />
         </div>
         <div className="project">
           <img className="project-img homeverse" alt="Homeverse" src={Homeverse[0]} />
@@ -185,8 +190,12 @@ function Projects() {
               <li>GSAP</li>
             </ul>
             <div className="project-links">
-              <a href="https://chandrahas529.github.io/Homeverse_Clone/"><i className="fa-solid fa-circle" style={{ color: "#ff0000" }}></i> Live</a>
-              <a href="https://github.com/Chandrahas529/Homeverse_Clone"><i className="fa-solid fa-code" style={{ color: "#1e00ff" }}></i> Code</a>
+              <a href="https://chandrahas529.github.io/Homeverse_Clone/">
+                <i className="fa-solid fa-circle" style={{ color: "#ff0000" }}></i> Live
+              </a>
+              <a href="https://github.com/Chandrahas529/Homeverse_Clone">
+                <i className="fa-solid fa-code" style={{ color: "#1e00ff" }}></i> Code
+              </a>
             </div>
           </div>
         </div>
@@ -205,8 +214,12 @@ function Projects() {
               <li>Css</li>
             </ul>
             <div className="project-links">
-              <button style={{ cursor: "not-allowed" }}><i className="fa-solid fa-circle" style={{ color: "#ff0000" }}></i> Live</button>
-              <button style={{ cursor: "not-allowed" }}><i className="fa-solid fa-code" style={{ color: "#1e00ff" }}></i> Code</button>
+              <button style={{ cursor: "not-allowed" }}>
+                <i className="fa-solid fa-circle" style={{ color: "#ff0000" }}></i> Live
+              </button>
+              <button style={{ cursor: "not-allowed" }}>
+                <i className="fa-solid fa-code" style={{ color: "#1e00ff" }}></i> Code
+              </button>
             </div>
           </div>
           <img className="project-img vaarta" alt="VAarta" src={VAarta[0]} />
