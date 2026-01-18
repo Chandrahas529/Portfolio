@@ -61,7 +61,7 @@ function Skills() {
             });
               
     }, [])
-    return <div className="Skills">
+    return <section className="Skills">
         <h3 className="skill-title">Skills</h3>
         <div className="skills-list">{
             skills.map((element, index) => {
@@ -69,6 +69,6 @@ function Skills() {
             })
         }
         </div>
-    </div>
+    </section>
 }
 export default Skills;

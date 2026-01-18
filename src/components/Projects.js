@@ -123,7 +123,7 @@ function Projects() {
   }, []);
 
   return (
-    <div className="projects">
+    <section className="projects">
       <h2>Some Projects</h2>
       <div className="project-ctn">
         <div className="project">
@@ -225,7 +225,7 @@ function Projects() {
           <img className="project-img vaarta" alt="VAarta" src={VAarta[0]} />
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

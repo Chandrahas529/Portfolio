@@ -55,7 +55,7 @@ function Contact() {
             );
         }
     }
-    return <div className="contact">
+    return <section className="contact">
         <h2>Contact me</h2>
         <div className="form-ctn">
             <img className="contact-me" alt="Contact png" src={contact_me} />
@@ -72,6 +72,6 @@ function Contact() {
                 <input type="submit" />
             </form>
         </div>
-    </div>
+    </section>
 }
 export default Contact;
