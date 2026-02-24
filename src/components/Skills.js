@@ -3,6 +3,10 @@ import { useGSAP } from '@gsap/react';
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger"; // Import ScrollTrigger
 const skills = [
+    { src: "Flutter", name: "Flutter" },
+    { src: "dart", name: "Dart" },
+    { src: "spline", name: "Spline" },
+    { src: "jwt", name: "JWT" },
     { src: "html-5", name: "HTML" },
     { src: "css-3", name: "CSS" },
     { src: "js", name: "Javascript" },
