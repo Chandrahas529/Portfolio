@@ -16,19 +16,21 @@
     justify-content: center;
 }
 .lang-logo{
-    height: 55px;
-    width: 60px;
+    height: 44px;
+    width: 48px;
 }
 .skill{
     background-color: #2d2d2d;
     padding: 4px;
-    display: flex;
+    display: flex;  
+    align-items: center;
     gap: 11px;
     width: 200px;
     border: 1px solid #564c4c;
     overflow: hidden;
     position: relative;
     transform-style: preserve-3d;
+    border-radius: 10px;
 }
 .skill:hover{
     transform: rotateY(10deg);
@@ -42,10 +44,14 @@
     height: 10px;
     width: 150px;
     transform: rotate(45deg);
-    transition: .7s cubic-bezier(0.64, 0.03, 0.25, 1);
     filter: blur(3px);
 }
+.skill:hover{
+    background-color: #ff005373;
+    box-shadow: 0px 0px 9px 3px #ff002d;
+}
 .skill:hover::after{
+    transition: .7s cubic-bezier(0.64, 0.03, 0.25, 1);
     transform:rotate(45deg) translateY(-300px) translateX(240px);
 }
 @media (max-width:900px){
@@ -59,10 +65,6 @@
     }
 }
 @media (max-width:500px){
-    .lang-logo{
-        height: 55px;
-        width: 60px;
-    }
     .skill-title{
         font-size: 1.6rem;
     }
