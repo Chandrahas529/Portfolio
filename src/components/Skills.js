@@ -8,7 +8,7 @@ const skills = [
     { src: "websocket", name: "WebSocket" },
     { src: "jwt", name: "JWT" },
     { src: "spline", name: "Spline" },
-    // { src: "redis", name: "Redis" },
+    { src: "redis", name: "Redis" },
     // { src: "kafka", name: "Kafka" },
     { src: "github", name: "Github" },
     { src: "html", name: "HTML" },
